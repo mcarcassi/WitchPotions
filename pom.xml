@@ -32,8 +32,9 @@
                   <preCp>anything</preCp>
                 </classPath>
                 <jre>
+                    <path>./jre</path>
                   <minVersion>1.5.0</minVersion>
-<!--                  <opts>
+ <!--                 <opts>
                     <opt>-Djava.endorsed.dirs=./endorsed</opt>
                   </opts>-->
                 </jre>
