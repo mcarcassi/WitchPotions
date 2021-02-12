@@ -10,4 +10,63 @@
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
     </properties>
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>com.akathist.maven.plugins.launch4j</groupId>
+          <artifactId>launch4j-maven-plugin</artifactId>
+          <version>1.7.25</version>
+          <executions>
+            <execution>
+              <id>l4j-clui</id>
+              <phase>package</phase>
+              <goals><goal>launch4j</goal></goals>
+              <configuration>
+                <headerType>console</headerType>
+                <outfile>target/WitchPotions.exe</outfile>
+                <jar>target/WitchPotions-1.0-SNAPSHOT.jar</jar>
+                <errTitle>WitchPotions</errTitle>
+                <classPath>
+                  <mainClass>it.carcassi.matteo.witchpotions.MyProgram</mainClass>
+                  <addDependencies>false</addDependencies>
+                  <preCp>anything</preCp>
+                </classPath>
+                <jre>
+                  <minVersion>1.5.0</minVersion>
+<!--                  <opts>
+                    <opt>-Djava.endorsed.dirs=./endorsed</opt>
+                  </opts>-->
+                </jre>
+                <versionInfo>
+                  <fileVersion>1.2.3.4</fileVersion>
+                  <txtFileVersion>txt file version?</txtFileVersion>
+                  <fileDescription>a description</fileDescription>
+                  <copyright>my copyright</copyright>
+                  <productVersion>4.3.2.1</productVersion>
+                  <txtProductVersion>txt product version</txtProductVersion>
+                  <productName>E-N-C-C</productName>
+                  <internalName>ccne</internalName>
+                  <originalFilename>original.exe</originalFilename>
+                </versionInfo>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+<!--        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>assembly</id>
+              <phase>package</phase>
+              <goals><goal>single</goal></goals>
+              <configuration>
+                <descriptors>
+                  <descriptor>assembly.xml</descriptor>
+                </descriptors>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>-->
+      </plugins>
+    </build>
 </project>
